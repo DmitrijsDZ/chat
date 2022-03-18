@@ -7,7 +7,7 @@ let vards=document.querySelector('.vards')
 function sutitZinu()
 {
     console.log("funkcija darbojas");
-    zinas.innerHTML= zinas.innerHTML+"<br/>"+zina.value;
+   // zinas.innerHTML= zinas.innerHTML+"<br/>"+zina.value;
 
 
     fetch(API+'/sutit/'+vards.value+'/'+zina.value)
@@ -20,17 +20,33 @@ zinas.innerHTML=dati;
  }
 
 
- async function ielaidetChataZinasJson()
- {
-let datiNoServera= await fetch(API +'/lasit');
-let dati= await datiNoServera.json();
-
-i=0
-while(i<await dati.lenght())
+ async function ieladetChataZinasJson()
 {
-    i=i+1;
-    console.log(i)
-}
-//console.log(await dati)
- }
- setInterval(ielaidetChataZinas,1000)
+    let datiNoServera = await fetch(API + '/lasit');
+    let dati = await datiNoServera.json();
+    let laiks;
+    
+    //console.log(await dati[0]['zina'] )
+    zinas.innerHTML = '';
+    
+    i = 0;
+    while ( i < await dati.length )
+    {
+        //console.log(i);
+        if("laiks" in dati[i])
+        {
+            let laiks ='[<i>'+dati[i]['laiks']+'</i>]';
+        }
+       else 
+       {
+        let laiks ='[<i>'+'nav zīnams'+'</i>]';
+       }
+        zinas.innerHTML = zinas.innerHTML+laiks+dati[i]['vards']+': '+dati[i]['zina']+'<br />';
+
+        i = i+1;
+    }
+
+    zinas.scrollTop = zinas.scrollHeight;
+}//beidzas ieladetChataZinasJson()
+
+setInterval( ieladetChataZinasJson, 1000 )

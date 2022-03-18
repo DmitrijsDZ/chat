@@ -5,18 +5,19 @@ body
  .wrapper
  {
      background: rgba(182, 201, 16, 0.281);
-     width: 500px;
-     height: 500px;
+     width: 70%;
+     height: 350px;
      border: 1px solid rgb(209, 216, 169);
      padding: 10px;
      margin:auto
  }
  .chataZinas
  {
-     background: rgb(0, 255, 242);
+     background: rgba(21, 194, 15, 0.11);
      height: 300px;
-     color:black;
+     color:white;
+     font-size:x-large;
      padding: 5px;
-     opacity: 40%;
+     
      overflow-x: scroll;
  }
