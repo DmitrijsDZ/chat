@@ -1,4 +1,4 @@
-const API ="https://chat2022.dmitrijsdz.repl.co/"
+const API ="https://chat2022.dmitrijsdz.repl.co"
 let zina=document.querySelector('.manaZina')
 let zinas=document.querySelector('.chataZinas')
 
@@ -9,7 +9,7 @@ function sutitZinu()
 }
  async function ielaidetChataZinas()
  {
-let datiNoServera= await fetch(API +'/lasit');
+let datiNoServera= await fetch('API' +'/lasit');
 let dati= await datiNoServera.text();
 zinas.innerHTML=dati;
  }
