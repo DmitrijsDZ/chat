@@ -1,6 +1,8 @@
 const API ="https://chat2022.dmitrijsdz.repl.co"
 let zina=document.querySelector('.manaZina')
 let zinas=document.querySelector('.chataZinas')
+let vards=document.querySelector('.vards')
+
 
 function sutitZinu()
 {
@@ -8,12 +10,20 @@ function sutitZinu()
     zinas.innerHTML= zinas.innerHTML+"<br/>"+zina.value;
 
 
-    fetch(APi+'/sutit/Dimon/'+zina.value)
+    fetch(API+'/sutit/'+vards.value+'/'+zina.value)
 }
  async function ielaidetChataZinas()
  {
 let datiNoServera= await fetch(API +'/lasit');
 let dati= await datiNoServera.text();
 zinas.innerHTML=dati;
+ }
+
+
+ async function ielaidetChataZinasJson()
+ {
+let datiNoServera= await fetch(API +'/lasit');
+let dati= await datiNoServera.json();
+console.log(await dati)
  }
  setInterval(ielaidetChataZinas,1000)
