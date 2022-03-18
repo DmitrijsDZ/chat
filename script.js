@@ -24,7 +24,6 @@ zinas.innerHTML=dati;
 {
     let datiNoServera = await fetch(API + '/lasit');
     let dati = await datiNoServera.json();
-    let laiks;
     
     //console.log(await dati[0]['zina'] )
     zinas.innerHTML = '';
@@ -33,15 +32,11 @@ zinas.innerHTML=dati;
     while ( i < await dati.length )
     {
         //console.log(i);
-        if("laiks" in dati[i])
-        {
-            let laiks ='[<i>'+dati[i]['laiks']+'</i>]';
+        let laiks = '[<i>' + '????          ' + '</i>] ';
+        if ("laiks" in dati[i]) {
+            laiks = '[<i>' + dati[i]['laiks'] + '</i>] ';
         }
-       else 
-       {
-        let laiks ='[<i>'+'?????'+'</i>]';
-       }
-        zinas.innerHTML = zinas.innerHTML+laiks+dati[i]['vards']+': '+dati[i]['zina']+'<br />';
+        zinas.innerHTML = zinas.innerHTML + laiks + dati[i]['vards']+': '+dati[i]['zina']+'<br />';
 
         i = i+1;
     }
