@@ -39,7 +39,7 @@ zinas.innerHTML=dati;
         }
        else 
        {
-        let laiks ='[<i>'+'nav zīnams'+'</i>]';
+        let laiks ='[<i>'+'?????'+'</i>]';
        }
         zinas.innerHTML = zinas.innerHTML+laiks+dati[i]['vards']+': '+dati[i]['zina']+'<br />';
 
