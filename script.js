@@ -9,7 +9,7 @@ function sutitZinu()
 }
  async function ielaidetChataZinas()
  {
-let datiNoServera= await fetch('chatazinas.txt');
+let datiNoServera= await fetch('API +'/lasit');
 let dati= await datiNoServera.text();
 zinas.innerHTML=dati;
  }
