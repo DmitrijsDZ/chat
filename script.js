@@ -6,6 +6,9 @@ function sutitZinu()
 {
     console.log("funkcija darbojas");
     zinas.innerHTML= zinas.innerHTML+"<br/>"+zina.value;
+
+
+    fetch(APi+'/sutit/Dimon/'+zina.value)
 }
  async function ielaidetChataZinas()
  {
