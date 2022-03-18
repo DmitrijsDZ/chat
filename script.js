@@ -1,3 +1,4 @@
+const API ="https://chat2022.dmitrijsdz.repl.co/"
 let zina=document.querySelector('.manaZina')
 let zinas=document.querySelector('.chataZinas')
 
