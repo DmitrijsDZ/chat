@@ -24,6 +24,13 @@ zinas.innerHTML=dati;
  {
 let datiNoServera= await fetch(API +'/lasit');
 let dati= await datiNoServera.json();
-console.log(await dati)
+
+i=0
+while(i<await dati.lenght())
+{
+    i=i+1;
+    console.log(i)
+}
+//console.log(await dati)
  }
  setInterval(ielaidetChataZinas,1000)
